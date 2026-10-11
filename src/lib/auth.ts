@@ -9,6 +9,11 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://assignment-7-teal-alpha.vercel.app",
+    "https://*.vercel.app",
+  ],
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -21,4 +26,4 @@ export const auth = betterAuth({
       enabled: !!process.env.GITHUB_CLIENT_ID && !!process.env.GITHUB_CLIENT_SECRET,
     },
   },
-}); 
+});
